@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D111B4F5-6E18-4536-8109-D7C0AB0ABB9F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BUQUEL_CPE301</RootNamespace>
+    <AssemblyName>BUQUEL_CPE301</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Employeedata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employeedata.Designer.cs">
+      <DependentUpon>Employeedata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employeesave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employeesave.Designer.cs">
+      <DependentUpon>Employeesave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employeeupdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employeeupdate.Designer.cs">
+      <DependentUpon>Employeeupdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="samplefrm_connectedDb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="samplefrm_connectedDb.Designer.cs">
+      <DependentUpon>samplefrm_connectedDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaveAssessment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaveAssessment.Designer.cs">
+      <DependentUpon>SaveAssessment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SequentialSearchExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SequentialSearchExample.Designer.cs">
+      <DependentUpon>SequentialSearchExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SequentialSearchExample_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SequentialSearchExample_2.Designer.cs">
+      <DependentUpon>SequentialSearchExample_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SequentialSearchExample_3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SequentialSearchExample_3.Designer.cs">
+      <DependentUpon>SequentialSearchExample_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SequentialSearchExample_5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SequentialSearchExample_5.Designer.cs">
+      <DependentUpon>SequentialSearchExample_5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SequentialSearchExample_6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SequentialSearchExample_6.Designer.cs">
+      <DependentUpon>SequentialSearchExample_6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SequentialSearchExample_7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SequentialSearchExample_7.Designer.cs">
+      <DependentUpon>SequentialSearchExample_7.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Employeedata.resx">
+      <DependentUpon>Employeedata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employeesave.resx">
+      <DependentUpon>Employeesave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employeeupdate.resx">
+      <DependentUpon>Employeeupdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="samplefrm_connectedDb.resx">
+      <DependentUpon>samplefrm_connectedDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="SaveAssessment.resx">
+      <DependentUpon>SaveAssessment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SequentialSearchExample.resx">
+      <DependentUpon>SequentialSearchExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SequentialSearchExample_2.resx">
+      <DependentUpon>SequentialSearchExample_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SequentialSearchExample_3.resx">
+      <DependentUpon>SequentialSearchExample_3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SequentialSearchExample_5.resx">
+      <DependentUpon>SequentialSearchExample_5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SequentialSearchExample_6.resx">
+      <DependentUpon>SequentialSearchExample_6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SequentialSearchExample_7.resx">
+      <DependentUpon>SequentialSearchExample_7.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
