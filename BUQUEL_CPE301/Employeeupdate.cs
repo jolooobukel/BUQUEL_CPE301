@@ -26,7 +26,8 @@ namespace BUQUEL_CPE301
 
         public Employeeupdate(DataGridViewRow row)
         {
-            connectionString = "Server=LAPTOP-9RU49MV3;Database=DSALDB;Integrated Security=True;";
+            //connectionString = "Server=LAPTOP-9RU49MV3;Database=DSALDB;Integrated Security=True;";
+            connectionString = "Data Source=C203-05; Initial Catalog=DSALDB; user id=SA; password=B1Admin123@; TrustServerCertificate=True";
             connection = new SqlConnection(connectionString);
             selectedRow = row;
 

@@ -25,7 +25,8 @@ namespace BUQUEL_CPE301
 
         public Employeedata()
         {
-            connectionString = "Server=LAPTOP-9RU49MV3;Database=DSALDB;Integrated Security=True;";
+            //connectionString = "Server=LAPTOP-9RU49MV3;Database=DSALDB;Integrated Security=True;";
+            connectionString = "Data Source=C203-05; Initial Catalog=DSALDB; user id=SA; password=B1Admin123@; TrustServerCertificate=True";
             connection = new SqlConnection(connectionString);
 
 
@@ -71,10 +72,12 @@ namespace BUQUEL_CPE301
         {
 
         }
+
         DataTable table = new DataTable();
 
         private void button6_Click(object sender, EventArgs e)
         {
+            //example 7
             string target = txtSearch.Text.Trim();
             bool found = false;
 
@@ -84,11 +87,15 @@ namespace BUQUEL_CPE301
 
                 if (name.Equals(target, StringComparison.OrdinalIgnoreCase))
                 {
+                    dataGridView1.Rows[i].Selected = true;                      // NEW
+                    dataGridView1.FirstDisplayedScrollingRowIndex = i;          // NEW
+                    dataGridView1.Refresh();
+
                     MessageBox.Show(
                         "Student found at record " + (i + 1));
 
                     found = true;
-                    break;
+                    //break;
                 }
             }
 
@@ -98,8 +105,10 @@ namespace BUQUEL_CPE301
 
         private void button4_Click(object sender, EventArgs e)
         {
+            //example 5
             string searchValue = txtSearch.Text.Trim();
             bool found = false;
+            dataGridView1.ClearSelection();
 
             for (int row = 0; row < dataGridView1.Rows.Count; row++)
             {
@@ -114,23 +123,26 @@ namespace BUQUEL_CPE301
                     if (value.Equals(searchValue,
                         StringComparison.OrdinalIgnoreCase))
                     {
-                        dataGridView1.ClearSelection();
+                        //dataGridView1.ClearSelection();
 
                         dataGridView1.Rows[row].Selected = true;
-                        dataGridView1.CurrentCell =
-                            dataGridView1.Rows[row].Cells[col];
+                        //dataGridView1.CurrentCell =
+                        //dataGridView1.Rows[row].Cells[col];
+
+                        dataGridView1.FirstDisplayedScrollingRowIndex = row;    // NEW
+                        dataGridView1.Refresh();
 
                         MessageBox.Show(
                             "Record found at row " + (row + 1));
 
                         found = true;
-                        break;
+                        //break;
                     }
                 }
 
 
-                if (found)
-                    break;
+                if (found) ;
+                    //break;
             }
 
             if (!found)
@@ -139,6 +151,8 @@ namespace BUQUEL_CPE301
 
         private void button5_Click(object sender, EventArgs e)
         {
+            //example 6
+
             string searchCourse = txtSearch.Text.Trim();
             int count = 0;
 
@@ -173,8 +187,10 @@ namespace BUQUEL_CPE301
 
         private void button3_Click(object sender, EventArgs e)
         {
+            //example 2
             string searchName = txtSearch.Text.Trim();
             bool found = false;
+            dataGridView1.ClearSelection();
 
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
@@ -199,6 +215,10 @@ namespace BUQUEL_CPE301
                     string last =
                         dataGridView1.Rows[i].Cells["last_name"].Value?.ToString() ?? "";
 
+                    dataGridView1.Rows[i].Selected = true;
+                    dataGridView1.FirstDisplayedScrollingRowIndex = i;   // scroll to the match
+                    dataGridView1.Refresh();
+
                     MessageBox.Show(
                         "Employee Found\n\n" +
                         "ID: " + id +
@@ -206,64 +226,74 @@ namespace BUQUEL_CPE301
                         "\nmiddle: " + middle +
                         "\nlast: " + last);
 
-                    dataGridView1.ClearSelection();
-                    dataGridView1.Rows[i].Selected = true;
+                    //dataGridView1.ClearSelection();
+                    //dataGridView1.Rows[i].Selected = true;
 
                     found = true;
-                    break;
+                    //break;
                 }
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            // exampple 3
+            
             string searchName = txtSearch.Text.Trim();
             bool found = false;
+            dataGridView1.ClearSelection();
 
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 if (dataGridView1.Rows[i].IsNewRow)
                     continue;
 
-                string employeeName =
+                string lastName =
                     dataGridView1.Rows[i].Cells["last_name"].Value?.ToString() ?? "";
 
-                if (employeeName.Equals(searchName,
+                if (lastName.Equals(searchName,
                     StringComparison.OrdinalIgnoreCase))
                 {
                     string id =
                         dataGridView1.Rows[i].Cells["employee_id"].Value?.ToString() ?? "";
 
-                    string first =
-                        dataGridView1.Rows[i].Cells["first_name"].Value?.ToString() ?? "";
+                    string Barangay =
+                        dataGridView1.Rows[i].Cells["Barangay"].Value?.ToString() ?? "";
 
-                    string middle =
-                        dataGridView1.Rows[i].Cells["middle_name"].Value?.ToString() ?? "";
+                    string city =
+                        dataGridView1.Rows[i].Cells["city"].Value?.ToString() ?? "";
 
-                    string last =
-                        dataGridView1.Rows[i].Cells["last_name"].Value?.ToString() ?? "";
+                    string province =
+                        dataGridView1.Rows[i].Cells["province"].Value?.ToString() ?? "";
+
+                    dataGridView1.Rows[i].Selected = true;
+                    dataGridView1.FirstDisplayedScrollingRowIndex = i;   // scroll to the match
+                    dataGridView1.Refresh();
 
                     MessageBox.Show(
                         "Employee Found\n\n" +
+                        "last_name: " + lastName +
                         "ID: " + id +
-                        "\nfirst: " + first +
-                        "\nmiddle: " + middle +
-                        "\nlast: " + last);
+                        "\nBarangay: " + Barangay +
+                        "\ncity: " + city +
+                        "\nprovince: " + province);
 
-                    dataGridView1.ClearSelection();
-                    dataGridView1.Rows[i].Selected = true;
+                    //dataGridView1.ClearSelection();
+                    //dataGridView1.Rows[i].Selected = true;
 
                     found = true;
-                    break;
+                    //break;
                 }
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //example 1
             string searchValue = txtSearch.Text.Trim();
 
             bool found = false;
+            dataGridView1.ClearSelection();
 
             // Sequential Search
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
@@ -279,12 +309,15 @@ namespace BUQUEL_CPE301
                     StringComparison.OrdinalIgnoreCase))
                 {
                     // Select the matching row
-                    dataGridView1.ClearSelection();
+                    //dataGridView1.ClearSelection();
                     dataGridView1.Rows[i].Selected = true;
 
                     // Move DataGridView to the matching record
-                    dataGridView1.CurrentCell =
-                        dataGridView1.Rows[i].Cells["first_name"];
+                    //dataGridView1.CurrentCell =
+                    //dataGridView1.Rows[i].Cells["first_name"];
+
+                    dataGridView1.FirstDisplayedScrollingRowIndex = i;          // NEW
+                    dataGridView1.Refresh();
 
                     MessageBox.Show(
                         "Record found at row " + (i + 1),
@@ -293,7 +326,7 @@ namespace BUQUEL_CPE301
                         MessageBoxIcon.Information);
 
                     found = true;
-                    break;
+                    //break;
                 }
             }
         }

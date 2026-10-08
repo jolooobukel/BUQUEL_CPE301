@@ -23,7 +23,8 @@ namespace BUQUEL_CPE301
 
         public samplefrm_connectedDb()
         {
-            connectionString = "Server=LAPTOP-9RU49MV3;Database=sampledb;Integrated Security=True;";
+            //connectionString = "Server=LAPTOP-9RU49MV3;Database=sampledb;Integrated Security=True;";
+            connectionString = "Data Source=C203-05; Initial CatalogDSALDB; user id=SA; password=B1Admin123@; TrustServerCertificate=True";
             connection = new SqlConnection(connectionString);
 
             InitializeComponent();
