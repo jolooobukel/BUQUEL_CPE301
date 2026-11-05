@@ -155,14 +155,12 @@ namespace BUQUEL_CPE301
             adaptersql.InsertCommand = command;
             command.ExecuteNonQuery();
 
-            sql = "SELECT * FROM dsaltbl ";
+            sql = "SELECT * FROM dsaltbl";
             command = new SqlCommand(sql, connection);
             command.CommandType = CommandType.Text;
-
             adaptersql = new SqlDataAdapter();
             adaptersql.SelectCommand = command;
             command.ExecuteNonQuery();
-
             dset = new DataSet();
             adaptersql.Fill(dset, "dsaltbl");
 

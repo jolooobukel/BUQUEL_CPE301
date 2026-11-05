@@ -16,7 +16,8 @@ namespace BUQUEL_CPE301
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Employeesave());
+            Application.Run(new Maynilad());
+            
            
         }
     }

@@ -66,6 +66,24 @@
     <Compile Include="Employeeupdate.Designer.cs">
       <DependentUpon>Employeeupdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Maynilad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maynilad.Designer.cs">
+      <DependentUpon>Maynilad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mayniladreceipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mayniladreceipt.Designer.cs">
+      <DependentUpon>Mayniladreceipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="quiz_midterms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="quiz_midterms.Designer.cs">
+      <DependentUpon>quiz_midterms.cs</DependentUpon>
+    </Compile>
     <Compile Include="samplefrm_connectedDb.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +97,12 @@
     </Compile>
     <Compile Include="SaveAssessment.Designer.cs">
       <DependentUpon>SaveAssessment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sentinel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sentinel.Designer.cs">
+      <DependentUpon>sentinel.cs</DependentUpon>
     </Compile>
     <Compile Include="SequentialSearchExample.cs">
       <SubType>Form</SubType>
@@ -125,6 +149,15 @@
     <EmbeddedResource Include="Employeeupdate.resx">
       <DependentUpon>Employeeupdate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Maynilad.resx">
+      <DependentUpon>Maynilad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mayniladreceipt.resx">
+      <DependentUpon>Mayniladreceipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="quiz_midterms.resx">
+      <DependentUpon>quiz_midterms.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="samplefrm_connectedDb.resx">
       <DependentUpon>samplefrm_connectedDb.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,9 +169,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SaveAssessment.resx">
       <DependentUpon>SaveAssessment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sentinel.resx">
+      <DependentUpon>sentinel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SequentialSearchExample.resx">
       <DependentUpon>SequentialSearchExample.cs</DependentUpon>
@@ -170,6 +207,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maynilad.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OIP.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OIP1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Maynilad logo - stacked.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

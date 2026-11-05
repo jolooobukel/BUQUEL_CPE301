@@ -251,5 +251,10 @@ namespace BUQUEL_CPE301
             datagrid_display.DataSource = dset.Tables[0];
             connection.Close();
         }
+
+        private void datagrid_display_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -233,6 +233,8 @@ namespace BUQUEL_CPE301
                     //break;
                 }
             }
+            if (!found)
+                MessageBox.Show("Product not found.");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -273,7 +275,7 @@ namespace BUQUEL_CPE301
                     MessageBox.Show(
                         "Employee Found\n\n" +
                         "last_name: " + lastName +
-                        "ID: " + id +
+                        "\nID: " + id +
                         "\nBarangay: " + Barangay +
                         "\ncity: " + city +
                         "\nprovince: " + province);
@@ -285,6 +287,8 @@ namespace BUQUEL_CPE301
                     //break;
                 }
             }
+            if (!found)
+                MessageBox.Show("Product not found.");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -327,9 +331,22 @@ namespace BUQUEL_CPE301
 
                     found = true;
                     //break;
+
                 }
             }
+
+            if (!found)
+            {
+                MessageBox.Show(
+                    "Record not found.",
+                    "Sequential Search",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+
         }
+
+
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -342,5 +359,50 @@ namespace BUQUEL_CPE301
                 LoadData();   // refresh the grid after updating
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+            RunSearch(SentinelSearch);
+        }
+
+       private void RunSearch(Func<DataTable, string, int> search)
+        {
+            var table = (DataTable)dataGridView1.DataSource;
+            int index = search(table, txtSearch.Text.Trim());
+            dataGridView1.ClearSelection();
+            if (index >= 0)
+            {
+                dataGridView1.Rows[index].Selected = true;
+                dataGridView1.FirstDisplayedScrollingRowIndex = index;
+            }
+            MessageBox.Show(index < 0 ? "Not found" : "Found!");
+        }
+
+        private int SentinelSearch(DataTable table, string key)
+        {
+            var names = table.AsEnumerable()
+                .Select(r => r["employee_id"].ToString())
+                .ToList(); // copy; do not edit DataSource
+
+            int originalCount = names.Count;
+            names.Add(key); // temporary sentinel
+            int i = 0;
+            while (!string.Equals(names[i], key,
+                    StringComparison.OrdinalIgnoreCase)) i++;
+
+            return i < originalCount ? i : -1;
+        }
     }
+    
 }
