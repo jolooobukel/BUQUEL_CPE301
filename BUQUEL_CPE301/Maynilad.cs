@@ -35,16 +35,19 @@ namespace BUQUEL_CPE301
         private void Maynilad_Load(object sender, EventArgs e)
         {
             connection.Open();
-            sql = "SELECT * FROM waterbillview";
+            sql = "SELECT * FROM customerInfoTbl c " +
+                  "INNER JOIN meterTbl m ON c.soa_number = m.soa_number " +
+                  "INNER JOIN paymentTbl p ON c.soa_number = p.soa_number";
             command = new SqlCommand(sql, connection);
             command.CommandType = CommandType.Text;
             adaptersql = new SqlDataAdapter();
             adaptersql.SelectCommand = command;
             command.ExecuteNonQuery();
             dset = new DataSet();
-            adaptersql.Fill(dset, "waterbillview");
-            dataGridView1.DataSource = dset.Tables["waterbillview"];
+            adaptersql.Fill(dset, "waterbillall");
+            dataGridView1.DataSource = dset.Tables["waterbillall"];
             connection.Close();
+
         }
      
         private void MSC_TextChanged(object sender, EventArgs e)

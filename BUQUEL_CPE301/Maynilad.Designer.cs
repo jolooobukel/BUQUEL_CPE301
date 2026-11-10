@@ -70,6 +70,7 @@
             this.label24 = new System.Windows.Forms.Label();
             this.MeterNo = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.ReadingDate = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.Present = new System.Windows.Forms.TextBox();
@@ -97,7 +98,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ReadingDate = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox6.SuspendLayout();
@@ -182,6 +182,7 @@
             // 
             // Total
             // 
+            this.Total.Enabled = false;
             this.Total.Location = new System.Drawing.Point(188, 19);
             this.Total.Name = "Total";
             this.Total.Size = new System.Drawing.Size(127, 20);
@@ -253,6 +254,7 @@
             // 
             // Current
             // 
+            this.Current.Enabled = false;
             this.Current.Location = new System.Drawing.Point(129, 45);
             this.Current.Name = "Current";
             this.Current.Size = new System.Drawing.Size(100, 20);
@@ -269,6 +271,7 @@
             // 
             // Basic
             // 
+            this.Basic.Enabled = false;
             this.Basic.Location = new System.Drawing.Point(129, 71);
             this.Basic.Name = "Basic";
             this.Basic.Size = new System.Drawing.Size(100, 20);
@@ -294,6 +297,7 @@
             // 
             // Env
             // 
+            this.Env.Enabled = false;
             this.Env.Location = new System.Drawing.Point(129, 97);
             this.Env.Name = "Env";
             this.Env.Size = new System.Drawing.Size(100, 20);
@@ -310,6 +314,7 @@
             // 
             // GovTax
             // 
+            this.GovTax.Enabled = false;
             this.GovTax.Location = new System.Drawing.Point(188, 174);
             this.GovTax.Name = "GovTax";
             this.GovTax.Size = new System.Drawing.Size(100, 20);
@@ -317,6 +322,7 @@
             // 
             // MSC
             // 
+            this.MSC.Enabled = false;
             this.MSC.Location = new System.Drawing.Point(188, 123);
             this.MSC.Name = "MSC";
             this.MSC.Size = new System.Drawing.Size(100, 20);
@@ -334,6 +340,7 @@
             // 
             // Beforetax
             // 
+            this.Beforetax.Enabled = false;
             this.Beforetax.Location = new System.Drawing.Point(188, 149);
             this.Beforetax.Name = "Beforetax";
             this.Beforetax.Size = new System.Drawing.Size(100, 20);
@@ -506,6 +513,13 @@
             this.label18.Size = new System.Drawing.Size(54, 13);
             this.label18.TabIndex = 18;
             this.label18.Text = "Meter No.";
+            // 
+            // ReadingDate
+            // 
+            this.ReadingDate.Location = new System.Drawing.Point(122, 58);
+            this.ReadingDate.Name = "ReadingDate";
+            this.ReadingDate.Size = new System.Drawing.Size(165, 20);
+            this.ReadingDate.TabIndex = 13;
             // 
             // label7
             // 
@@ -746,13 +760,6 @@
             this.pictureBox1.TabIndex = 59;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // ReadingDate
-            // 
-            this.ReadingDate.Location = new System.Drawing.Point(122, 58);
-            this.ReadingDate.Name = "ReadingDate";
-            this.ReadingDate.Size = new System.Drawing.Size(165, 20);
-            this.ReadingDate.TabIndex = 13;
             // 
             // textBox1
             // 
